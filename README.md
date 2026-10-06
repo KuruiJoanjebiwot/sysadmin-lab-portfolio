@@ -1,21 +1,33 @@
-# Sysadmin Lab Portfolio
+# Enterprise Hybrid Infrastructure & Systems Engineering Lab
 
-This repository is organized for a systems administration lab portfolio covering:
+##  Architectural Overview
+This repository contains production-ready Infrastructure-as-Code (IaC), Active Directory configuration scripts, containerized web service stacks, and Zabbix monitoring setups simulating a hybrid enterprise IT environment.
 
-- Active Directory experimentation and automation
-- Ansible role and playbook content
-- Docker container lab assets
-- Zabbix monitoring resources
-- Documentation and screenshots
+### Network Topology & Hosts
+* **Active Directory DC (`win-dc01`):** `192.168.10.10` (Windows Server 2022)
+* **Linux Infrastructure Node (`ubuntu-node01`):** `192.168.10.20` (Ubuntu 22.04 LTS)
+* **Subnet:** `192.168.10.0/24`
 
-## Structure
+---
 
-- `active-directory/` - AD lab configurations and notes
-- `ansible/` - Ansible playbooks and roles
-- `docker/` - Dockerfiles, compose files, and lab artifacts
-- `zabbix/` - Zabbix templates, configs, and monitoring notes
-- `docs/` - project documentation and images
+## 🛠 Features & Capabilities
 
-## Notes
+### 1. Active Directory & Identity Management
+* Provisioned AD DS Forest (`corp.local`) and core DNS resolution services.
+* Automated Remote Server Administration Tools (RSAT) deployment across management nodes using Ansible.
 
-The original folder creation command used a POSIX-style flag (`-p`) that is not valid in PowerShell. The directories above were created using the Windows-compatible equivalent so the project can continue cleanly.
+### 2. Configuration Management & Automation (Ansible)
+* Executed baseline system patching, security updates, and core package management via `/ansible/site.yml`.
+* Implemented multi-OS playbooks targeting both Debian/Ubuntu and Windows endpoints.
+
+### 3. Microservices & Web Application Hosting (Docker)
+* Deployed containerized Nginx web server mounted with custom web assets (`/docker/docker-compose.yml`).
+* Integrated containerized Zabbix Agent 2 sidecars for real-time application metrics collection.
+
+### 4. Infrastructure Health Monitoring (Zabbix Stack)
+* Deployed multi-container Zabbix 6.4 LTS stack with MySQL database backend and Nginx frontend web console (`/zabbix/docker-compose.yml`).
+* Configured real-time metric tracking for CPU load, RAM usage, disk I/O, and service health across hosts.
+
+---
+
+##  Proof of Work & Verification

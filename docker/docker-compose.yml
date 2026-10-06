@@ -1,15 +1,19 @@
+version: '3.8'
+
 services:
-  ubuntu:
-    image: ubuntu:22.04
-    container_name: ubuntu-lab
-    tty: true
-    stdin_open: true
-    command: /bin/bash
+  webserver:
+    image: nginx:alpine
+    container_name: production-web-app
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./html:/usr/share/nginx/html:ro
 
   zabbix-agent:
     image: zabbix/zabbix-agent2:alpine-6.4-latest
     container_name: zabbix-agent
     restart: unless-stopped
     environment:
-      ZBX_SERVER_HOST: "zabbix-server"
-      ZBX_ACTIVE_ALLOW: "true"
+      ZBX_SERVER_HOST: "192.168.10.20"
+      ZBX_HOSTNAME: "ubuntu-node01"

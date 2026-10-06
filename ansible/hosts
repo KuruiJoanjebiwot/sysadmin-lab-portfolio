@@ -1,5 +1,8 @@
 [windows]
-win-dc01 ansible_host=192.168.10.10 ansible_user=administrator ansible_password=Password123! ansible_connection=winrm ansible_winrm_server_cert_validation=ignore
+win-dc01 ansible_host=192.168.10.10 ansible_user=administrator ansible_connection=winrm ansible_winrm_server_cert_validation=ignore
 
 [linux]
 ubuntu-node01 ansible_host=192.168.10.20 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_rsa
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
