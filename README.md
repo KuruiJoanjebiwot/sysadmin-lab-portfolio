@@ -14,3 +14,4 @@ This repository contains an infrastructure lab portfolio covering:
 * `docker/` - General service container stacks.
 * `zabbix/` - Centralized monitoring stack definition.
 * `docs/` - Architecture notes and verification screenshots.
+
