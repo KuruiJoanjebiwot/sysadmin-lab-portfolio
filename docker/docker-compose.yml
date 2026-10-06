@@ -1,0 +1,15 @@
+services:
+  ubuntu:
+    image: ubuntu:22.04
+    container_name: ubuntu-lab
+    tty: true
+    stdin_open: true
+    command: /bin/bash
+
+  zabbix-agent:
+    image: zabbix/zabbix-agent2:alpine-6.4-latest
+    container_name: zabbix-agent
+    restart: unless-stopped
+    environment:
+      ZBX_SERVER_HOST: "zabbix-server"
+      ZBX_ACTIVE_ALLOW: "true"

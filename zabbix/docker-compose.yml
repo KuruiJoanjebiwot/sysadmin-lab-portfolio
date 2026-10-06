@@ -1,0 +1,20 @@
+services:
+  zabbix-server:
+    image: zabbix/zabbix-server-mysql:alpine-6.4-latest
+    container_name: zabbix-server
+    restart: unless-stopped
+    environment:
+      DB_SERVER_HOST: "mysql"
+      MYSQL_DATABASE: "zabbix"
+      MYSQL_USER: "zabbix"
+      MYSQL_PASSWORD: "zabbix"
+
+  mysql:
+    image: mysql:8.0
+    container_name: zabbix-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: "zabbix"
+      MYSQL_USER: "zabbix"
+      MYSQL_PASSWORD: "zabbix"
+      MYSQL_ROOT_PASSWORD: "root"

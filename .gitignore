@@ -1,0 +1,30 @@
+# General
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Local environment
+.env
+.env.*
+
+# Lab artifacts
+*.pem
+*.key
+*.crt
+
+# Docker
+**/data/
+**/volumes/
+
+# Ansible
+*.retry
+.env
+*.pem
+*.iso
+*.log

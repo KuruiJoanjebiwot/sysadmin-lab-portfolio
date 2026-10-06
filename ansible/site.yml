@@ -1,0 +1,21 @@
+---
+- name: Base system configuration
+  hosts: all
+  become: true
+  tasks:
+    - name: Ensure common packages are installed
+      ansible.builtin.apt:
+        name:
+          - curl
+          - git
+          - htop
+          - vim
+        state: present
+        update_cache: true
+      when: ansible_os_family == 'Debian'
+
+    - name: Ensure Windows baseline is present
+      ansible.windows.win_feature:
+        name: RSAT-AD-Tools
+        state: present
+      when: ansible_os_family == 'Windows'
