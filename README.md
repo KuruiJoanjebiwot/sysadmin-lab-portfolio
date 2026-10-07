@@ -15,3 +15,7 @@ This repository contains an infrastructure lab portfolio covering:
 * `zabbix/` - Centralized monitoring stack definition.
 * `docs/` - Architecture notes and verification screenshots.
 
+
+<img width="959" height="517" alt="docker dash" src="https://github.com/user-attachments/assets/69af839d-d1de-419f-b838-fa42d6cdf191" />
+<img width="958" height="539" alt="ansible_run" src="https://github.com/user-attachments/assets/c8b32a9e-8c35-4d4c-a822-ef8757045c86" />
+
